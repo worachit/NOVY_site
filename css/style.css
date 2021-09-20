@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background: #E5E5E5;
+    font-family: Prompt;
+}
+.navbar{
+    background: #ECECEC;
+    padding: 1em;
+}
+
+.hero{
+    min-height: 100vh;
+    width: 100%;
+    opacity: 0.4;
+    background : url(../images/index_image.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
