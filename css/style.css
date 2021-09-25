@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
 
 :root{
     --primary-green: #00B894;
@@ -9,7 +9,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: #E5E5E5;
+    background: white;
     font-family: Prompt;
     color: #374248;
 }
@@ -18,28 +18,34 @@ body{
     place-content: space-between;
 }
 section{
-    padding: 5em 2em
+    padding: 2em 2em;
+}
+h1{
+    /* font-style: bold; */
+    font-weight: 700;
+    font-size: 2.5em;
 }
 h2{
-    font-style: normal;
+    /* font-style: normal; */
     font-weight: 600;
     font-size: 2em;
 }
+h3{
+    font-style: medium;
+    font-weight: 400;
+    font-size: 1.5em
+}
 h4{
-    font-style: normal;
+    /* font-style: normal; */
+    font-weight: 200;
+    margin-bottom: -1em;
+    color: gray;
+}
+h5{
+    /* font-style: normal; */
     font-weight: 200;
     margin-bottom: -2em;
     color: gray;
-}
-h3{
-    font-style: medium;
-    font-weight: 500;
-}
-
-.subhead
-{
-    font-weight: 400;
-    font-size: 1em;
 }
 .mobile-menu{
     cursor: pointer;
@@ -87,12 +93,10 @@ h3{
 /* navbar css */
 
 
-
-
 /* hero section */
 .hero{
     min-height: 100vh;
-    background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(../images/index_image.png);
+    background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(../images/index-image.PNG);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -105,20 +109,29 @@ h3{
     padding: 2em;
     margin: 13em 3em 0em 3em;
 }
+.subhead
+{
+    font-weight: 400;
+    font-size: 1em;
+}
 /*  */
 
 /* section 2 */
-
-.ex_image{
-    /* width: 15%; */
-    max-width:15vw
+.dataset{
+    background :url(../images/blob1.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 7em 2em;
+}
+.ex-image{
+    max-width:15vw;
 }
 .left-align{
     text-align: left;
 }
 .right-example-image{
-    padding-right: 13em;
-    padding: 2em;
+    /* padding: 2em; */
     margin: 4em 3em 0em 3em;
     text-align: center;
 }
@@ -127,9 +140,13 @@ h3{
     color: white;
     padding: 1em;
     margin-top: 0em;
+    font-style: medium;
+    font-weight: 400;
+    font-size: 1.2em;
 }
 .button-download{
-    background: var(--primary-green);
+    /* background: var(--primary-green); */
+    background: #FF6961;
     box-sizing: border-box;
     border-radius: 25px;
     padding: 0.5em 2em 0.5em 2em;
@@ -142,5 +159,88 @@ h3{
     max-width: 35vw;
     padding: 2em;
     margin: 4em 3em 0em 3em;
+}
+.context
+{
+    font-weight: 400;
+    font-size: 1em;
+    margin-bottom: 2em;
+}
+/*  */
+
+/* section 3 */
+.about-us{
+    background :url(../images/blob2.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.right-col{
+    text-align: right;
+    display: inline;
+    padding-right: 3em;
+}
+figure {
+    padding: 1em;
+    margin: auto;
+    text-align: center;
+}  
+.team-image{
+    max-width:9vw;
+    margin: 1em;
+}
+figcaption {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 0.5em 1em;
+    text-align: center;
+}
+.team-ul{
+    list-style-type: none;
+    display: inline-flex;
+}
+.logo-ul{
+    position: absolute;
+    list-style-type: none;
+    display: inline-flex;
+    bottom: 0;
+}
+.left-col3{
+    position: relative
+}
+.logo-contact-image{
+    max-height:10vh;
+    padding: 0.5em;
+}
+/*  */
+
+/* footer */
+.footer {
+    background-size: cover;
+    background-color: var(--primary-green);
+    color: white;
+    text-align: left;
+}
+.head-footer{
+    padding-left: 3em;
+}
+.contact-ul{
+    list-style-type: none;
+    padding-right: 5em
+}
+/*  */
+
+
+/* login */
+.login-container{
+    text-align: center;
+    width: 50%;
+}
+.login-header{
+    font-weight: 600;
+    font-size: 2em;
+}
+.login-ul{
+    list-style-type: none;
 }
 /*  */
