@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
 
 :root{
-    --primary-green: #00B894;
+    --primary-green: #92C0A3;
     --navbar-white: #F4F4F4;
     --primary-blue: #4B50C4;
     /* color: var(--primary-blue) */
@@ -12,21 +12,17 @@ body{
     background: white;
     font-family: Prompt;
     color: #374248;
+
 }
 .container{
     display: flex;
     place-content: space-between;
 }
-section{
-    padding: 2em 2em;
-}
 h1{
-    /* font-style: bold; */
     font-weight: 700;
     font-size: 2.5em;
 }
 h2{
-    /* font-style: normal; */
     font-weight: 600;
     font-size: 2em;
 }
@@ -36,13 +32,11 @@ h3{
     font-size: 1.5em
 }
 h4{
-    /* font-style: normal; */
     font-weight: 200;
     margin-bottom: -1em;
     color: gray;
 }
 h5{
-    /* font-style: normal; */
     font-weight: 200;
     margin-bottom: -2em;
     color: gray;
@@ -54,22 +48,25 @@ h5{
 
 /* navbar css */
 .navbar{
+    position: fixed;
     background: var(--navbar-white);
-    padding: 0em 2em 2em 2em;
-    height: 2em;
-    background-size: cover;
+    /* background-size: cover; */
+    padding-top: 0.5em;
     font-size: 1.1em;
+    width: 100%;
+    z-index: 99;
 }
 .nav-logo{
     height: 2.5em;
-    padding-top: 0.5em;
+    padding-top: 0.6em;
+    padding-left: 2em;
 }
 .login-button{
     background: var(--navbar-white);
     border: 5px solid var(--primary-green);
     box-sizing: border-box;
     border-radius: 25px;
-    padding-left: 2em
+    padding-left: 2em;
 }
 .button-nav-ul
 {
@@ -84,11 +81,15 @@ h5{
 .user-nav{
     list-style-type: none;
     display: inline-flex;
+    padding-right: 2em;
 }
 .nav-ul{
     text-decoration: none;
     padding-right: 2em;
     color: #00361E
+}
+ul.mainsite-nav a:hover, ul.user-nav a:hover { 
+    color: var(--primary-green); 
 }
 /* navbar css */
 
@@ -97,7 +98,7 @@ h5{
 .hero{
     min-height: 100vh;
     background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(../images/index-image.PNG);
-    background-position: center;
+    background-position: top;
     background-size: cover;
     position: relative;
     /* text-align: center; */
@@ -114,26 +115,46 @@ h5{
     font-weight: 400;
     font-size: 1em;
 }
-/*  */
+#bottom-hero{
+    position:absolute; 
+    width: 100%;
+    bottom: 0;
+}
+/* hero section */
 
-/* section 2 */
+/* dataset section */
 .dataset{
-    background :url(../images/blob1.png);
+    background : url(../images/blob-dataset.SVG);
+    padding: 5em 0em 20em;
     background-position: center;
     background-size: cover;
     position: relative;
-    padding: 7em 2em;
+    color: white;
+
+}
+.container-center-align{
+    display: flex;
+    place-content: space-between;
+    align-items: center;
+}
+#blob-dataset{
+    position:absolute; 
+    width: 100%;
+    z-index: -1;
+}
+#bottom-dataset{
+    position:absolute; 
+    width: 100%;
+    bottom: 0;
 }
 .ex-image{
-    max-width:15vw;
+    max-width: 12vw;
 }
 .left-align{
     text-align: left;
 }
 .right-example-image{
-    /* padding: 2em; */
-    margin: 4em 3em 0em 3em;
-    text-align: center;
+    margin: 0em 8em;
 }
 .example-image-text{
     background: var(--primary-blue);
@@ -143,9 +164,9 @@ h5{
     font-style: medium;
     font-weight: 400;
     font-size: 1.2em;
+    text-align: center;
 }
 .button-download{
-    /* background: var(--primary-green); */
     background: #FF6961;
     box-sizing: border-box;
     border-radius: 25px;
@@ -158,22 +179,23 @@ h5{
     text-align: center;
     max-width: 35vw;
     padding: 2em;
-    margin: 4em 3em 0em 3em;
+    margin: 0em 3em;
 }
 .context
 {
     font-weight: 400;
-    font-size: 1em;
+    font-size: 1.2em;
     margin-bottom: 2em;
 }
-/*  */
+/* dataset section */
 
-/* section 3 */
+/* about us section */
 .about-us{
-    background :url(../images/blob2.png);
+    background : url(../images/bg-about-us.SVG);
     background-position: center;
     background-size: cover;
     position: relative;
+    padding: 0em 0em 15em;
 }
 .right-col{
     text-align: right;
@@ -206,13 +228,13 @@ figcaption {
     bottom: 0;
 }
 .left-col3{
-    position: relative
+    align-items: bottom;
 }
 .logo-contact-image{
     max-height:10vh;
     padding: 0.5em;
 }
-/*  */
+/* about us section */
 
 /* footer */
 .footer {
@@ -220,27 +242,87 @@ figcaption {
     background-color: var(--primary-green);
     color: white;
     text-align: left;
+    padding: 0.5em 0em 2.5em;
 }
 .head-footer{
     padding-left: 3em;
 }
 .contact-ul{
     list-style-type: none;
-    padding-right: 5em
-}
-/*  */
-
-
-/* login */
-.login-container{
-    text-align: center;
+    padding-right: 5em;
     width: 50%;
+    font-size: 1.1em;
+}
+.contact-li{
+    padding-bottom: 0.5em;
+}
+.footer-image{
+    filter: white;
+}
+/* footer */
+
+
+/* login and register*/
+.login-container{
+    background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(../images/ex3.JPG);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.form-container{
+    background: var(--navbar-white);
+    border-radius: 2em;
+    max-width: 35vw;
+    padding: 2em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:40vw;
+}
+.nav-logo2{
+    height: 6em;
 }
 .login-header{
     font-weight: 600;
     font-size: 2em;
 }
 .login-ul{
+    padding-left:0em;
     list-style-type: none;
+    text-align: center;
 }
-/*  */
+.input-spacing{
+    padding-bottom: 1.5em;
+}
+.button-spacing{
+    padding: 0.8em 0em;
+}
+.user-button{
+    background: var(--primary-green);
+    border-radius: 25px;
+    padding: 0.4em 3em;
+    text-decoration: none;
+    color: white;
+}
+.user-button-text{
+    padding: 0.4em 3em;
+    text-decoration: none;
+    color: black;
+}
+i {
+    position: absolute;
+    padding: 10px 20px 0px;
+}
+.input{
+    font-family:inherit;
+    font-size: 1.1em;
+    padding:0.15em 2.5em;
+    border-radius:10em;
+}
+/* login */
