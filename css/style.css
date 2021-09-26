@@ -56,6 +56,13 @@ h5{
     width: 100%;
     z-index: 99;
 }
+.navbar-otherpage{
+    background: var(--navbar-white);
+    /* background-size: cover; */
+    padding-top: 0.5em;
+    font-size: 1.1em;
+    width: 100%;
+}
 .nav-logo{
     height: 2.5em;
     padding-top: 0.6em;
@@ -260,6 +267,59 @@ figcaption {
     filter: white;
 }
 /* footer */
+
+/* dowload */
+.download{
+    min-height: 100vh;
+    background : url(../images/bg-download.SVG);
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    padding: 0em 5em 5em;
+
+}
+.download-sub-header{
+    background-color: var(--primary-green);
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+
+}
+.image-annote{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5em 0em;
+}
+.image-annote-content{
+    padding-right:10vw;
+    text-align:left;
+}
+.image-annote-ul{
+    list-style-type: none;
+    font-size: 1.1em;
+    padding-left: 0em;
+}
+.code-download{
+    text-align:left;
+}
+.code-content{
+    text-decoration: none;
+    list-style: none;
+    background-color:var(--background-white);
+    background: var(--navbar-white);
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 1em 3em;
+}
+.download-sub-header-image
+{
+    height: 2.5em;
+    padding: 0em 1em;
+}
+/* download */
 
 
 /* login and register*/
