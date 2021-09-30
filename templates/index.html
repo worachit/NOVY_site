@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html>
+    {% load static %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cassava bigdata</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a href="{% url 'base:index' %}"><img id="logo" class="nav-logo" src="{% static 'images/cassava-logos_black.png' %}"
+                    alt="Logo"></a>
+            <nav>
+                <ul class="mainsite-nav">
+                    <li> <a class=nav-ul href="#hero"> หน้าหลัก</a></li>
+                    <li> <a class=nav-ul href="#dataset"> ฐานข้อมูล</a></li>
+                    <li> <a class=nav-ul href="#about-us"> เกี่ยวกับเรา</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul class="user-nav">
+                    <li> <a class=nav-ul href="{% url 'user:signup' %}"> ลงทะเบียน</a></li>
+                    <li class="login-button"> <a class=button-nav-ul href="{% url 'user:login' %}"> เข้าสู่ระบบ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section id=hero class="hero">
+        <div class="container">
+            <div class="left-col">
+                <h5>ใหญ่ที่สุดในประเทศไทย</h5>
+                <h2>ฐานข้อมูลภาพถ่ายโรคมันสำปะหลัง</h2>
+                <p class="subhead">ฐานข้อมูล Big Data ของภาพถ่านต้นมันสำปะหลังจากโดรน
+                    เพื่อการพัฒนาระบบการเรียนรู้ปัญญาประดิษฐ์</p>
+            </div>
+            <img src="{% static 'images/bottom-hero.svg' %}" id="bottom-hero">
+        </div>
+    </section>
+
+    <section id=dataset class="dataset">
+        <div class="container-center-align">
+
+            <div class=left-col2>
+                <div class="left-align">
+                    <h1>รายละเอียดฐานข้อมูล</h1>
+                    <p class="context">ไกด์ มายาคติเอาท์ดอร์ทีวี โรแมนติกแซมบ้าฟรังก์ลิมูซีนนรีแพทย์
+                        ซัพพลายเออร์เฟรชชี่หมวย ซีรีส์ ไฮกุแฟ้บ เบิร์นโอเลี้ยง คอมพ์แจ็กเก็ตคอลัมน์
+                        สตูดิโอพุทธภูมิแชเชือนมอคคา มินต์ฮัลโหล สมาพันธ์นิวกาญจนาภิเษก แจ๊กเก็ต แจม
+                        สแตนเลสอันตรกิริยาชาร์จเคลื่อนย้าย คอนเฟิร์มโมเดิร์นแพนด้า โมเต็ลวีเจ
+                        ตังค์เบลอกลาส รูบิคเอ๋ หลวงพี่เป็นไงรีเสิร์ชโอเลี้ยงเด้อ โบตั๋นแบตสแตนเลสปิโตรเคมีซาดิสต์
+                        อีโรติกชาร์ปสเปกวัคค์นิรันดร์ เตี๊ยมดยุกสเต็ป ไฟลท์ซาฟารีฟิวเจอร์ ไมเกรนริกเตอร์ เลคเชอร</p>
+                </div>
+                <a class=button-download href="{% url 'dataset:download' %}"> ดาวน์โหลด</a>
+            </div>
+
+            <div class="right-example-image">
+                <div>
+                    <img id="example" class="ex-image" src="{% static 'images/ex2.JPG' %}" alt="ex2">
+                    <img id="example" class="ex-image" src="{% static 'images/ex1.JPG' %}" alt="ex1">
+                </div>
+                <div>
+                    <img id="example" class="ex-image" src="{% static 'images/ex3.JPG' %}" alt="ex3">
+                    <img id="example" class="ex-image" src="{% static 'images/ex4.JPG' %}" alt="ex4">
+                </div>
+                <p class=example-image-text> ตัวอย่างชุดข้อมูล </p>
+            </div>
+            <img src="{% static 'images/bottom-dataset.svg' %}" id="bottom-dataset">
+
+        </div>
+    </section>
+
+    <section id=about-us class="about-us">
+        <div class="container">
+            <div class=left-col3>
+                <ul class="logo-ul">
+                    <li><img id="example" class="logo-contact-image" src="{% static 'images/kmutt-logo.PNG' %}" alt="kmutt"></li>
+                    <li><img id="example" class="logo-contact-image" src="{% static 'images/fibo-logo.jpg' %}" alt="fibo"></li>
+                </ul>
+            </div>
+            <div class=right-col>
+                <h1>เกี่ยวกับเรา</h1>
+                <h4>เวปไซต์นี้เป็นส่วนหนึ่งของโครงการการ</h4>
+                <h3>การพัฒนาโดรนสำรวจอัจฉริยะเพื่อตรวจหาความผิดปกติของต้นมันสำปะหลัง</h3>
+                <div class="team-image-description">
+                    <ul class="team-ul">
+                        <li>
+                            <figure>
+                                <img id="example" class="team-image" src="{% static 'images/team-image.PNG' %}" alt="per1">
+                                <figcaption>ผศ.ดร.อรพดี จูฉิม</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img id="example" class="team-image" src="{% static 'images/team-image.PNG' %}" alt="per2">
+                                <figcaption>นายกฤตธัช สาทรานนท์</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img id="example" class="team-image" src="{% static 'images/team-image.PNG' %}" alt="per3">
+                                <figcaption>นายณัฐพงษ์ ฉางแก้ว</figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                    <ul class="team-ul">
+                        <li>
+                            <figure>
+                                <img id="example" class="team-image" src="{% static 'images/team-image.PNG' %}" alt="per1">
+                                <figcaption>นายวีระชาติ ค้ำคูณ</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img id="example" class="team-image" src="{% static 'images/team-image.PNG' %}" alt="per2">
+                                <figcaption>นายกวีวุฒิ ชูจิตร</figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class=head-footer>
+            <h1>ติดต่อเรา</h1>
+        </div>
+        <div class="container">
+            <ul class="contact-ul">
+                <li class="contact-li">มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (บางมด)</li>
+                <li class="contact-li">126 ถนนประชาอุทิศ แขวงบางมด เขตทุ่งครุ กรุงเทพฯ 10140</li>
+                <li class="contact-li"> <img src="{% static 'images/phone.SVG' %}" class="footer-image"> โทรศัพท์: 0 2470 8000</li>
+                <li class="contact-li">โทรสาร: 0 2427 9860</li>
+                <li class="contact-li"> <img src="{% static 'images/email.SVG' %}" class="footer-image"> อีเมล: uso@kmutt.ac.th</li>
+            </ul>
+            <ul class="contact-ul">
+                <li class="contact-li">สถาบันวิทยาการหุ่นยนต์ภาคสนาม (FIBO)</li>
+                <li class="contact-li">126 ถนนประชาอุทิศ แขวงบางมด เขตทุ่งครุ กรุงเทพฯ 10140</li>
+                <li class="contact-li"> <img src="{% static 'images/phone.SVG' %}" class="footer-image"> ทรศัพท์: 0 2470 9339</li>
+                <li class="contact-li">โทรสาร: 0 2427 9703</li>
+                <li class="contact-li"> <img src="{% static 'images/email.SVG' %}" class="footer-image"> อีเมล:
+                    information@fibo.kmutt.ac.th</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

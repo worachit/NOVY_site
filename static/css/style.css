@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --primary-green: #92C0A3;
+    --navbar-white: #F4F4F4;
+    --primary-blue: #4B50C4;
+    /* color: var(--primary-blue) */
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-family: Prompt;
+    color: #374248;
+
+}
+.container{
+    display: flex;
+    place-content: space-between;
+}
+h1{
+    font-weight: 700;
+    font-size: 2.5em;
+}
+h2{
+    font-weight: 600;
+    font-size: 2em;
+}
+h3{
+    font-style: medium;
+    font-weight: 400;
+    font-size: 1.5em
+}
+h4{
+    font-weight: 200;
+    margin-bottom: -1em;
+    color: gray;
+}
+h5{
+    font-weight: 200;
+    margin-bottom: -2em;
+    color: gray;
+}
+.mobile-menu{
+    cursor: pointer;
+}
+
+
+/* navbar css */
+.navbar{
+    position: fixed;
+    background: var(--navbar-white);
+    /* background-size: cover; */
+    padding-top: 0.5em;
+    font-size: 1.1em;
+    width: 100%;
+    z-index: 99;
+}
+.navbar-otherpage{
+    background: var(--navbar-white);
+    /* background-size: cover; */
+    padding-top: 0.5em;
+    font-size: 1.1em;
+    width: 100%;
+}
+.nav-logo{
+    height: 2.5em;
+    padding-top: 0.6em;
+    padding-left: 2em;
+}
+.login-button{
+    background: var(--navbar-white);
+    border: 5px solid var(--primary-green);
+    box-sizing: border-box;
+    border-radius: 25px;
+    padding-left: 2em;
+}
+.button-nav-ul
+{
+    text-decoration: none;
+    padding-right: 2em;
+    color: var(--primary-green);
+}
+.mainsite-nav{
+    list-style-type: none;
+    display: inline-flex;
+}
+.user-nav{
+    list-style-type: none;
+    display: inline-flex;
+    padding-right: 2em;
+}
+.nav-ul{
+    text-decoration: none;
+    padding-right: 2em;
+    color: #00361E
+}
+ul.mainsite-nav a:hover, ul.user-nav a:hover { 
+    color: var(--primary-green); 
+}
+/* navbar css */
+
+
+/* hero section */
+.hero{
+    min-height: 100vh;
+    background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(../images/index-image.PNG);
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    /* text-align: center; */
+}
+.left-col{
+    background: var(--navbar-white);
+    border-radius: 2em;
+    max-width: 35vw;
+    padding: 2em;
+    margin: 13em 3em 0em 3em;
+}
+.subhead
+{
+    font-weight: 400;
+    font-size: 1em;
+}
+#bottom-hero{
+    position:absolute; 
+    width: 100%;
+    bottom: 0;
+}
+/* hero section */
+
+/* dataset section */
+.dataset{
+    background : url(../images/blob-dataset.SVG);
+    padding: 5em 0em 20em;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+
+}
+.container-center-align{
+    display: flex;
+    place-content: space-between;
+    align-items: center;
+}
+#blob-dataset{
+    position:absolute; 
+    width: 100%;
+    z-index: -1;
+}
+#bottom-dataset{
+    position:absolute; 
+    width: 100%;
+    bottom: 0;
+}
+.ex-image{
+    max-width: 12vw;
+}
+.left-align{
+    text-align: left;
+}
+.right-example-image{
+    margin: 0em 8em;
+}
+.example-image-text{
+    background: var(--primary-blue);
+    color: white;
+    padding: 1em;
+    margin-top: 0em;
+    font-style: medium;
+    font-weight: 400;
+    font-size: 1.2em;
+    text-align: center;
+}
+.button-download{
+    background: #FF6961;
+    box-sizing: border-box;
+    border-radius: 25px;
+    padding: 0.5em 2em 0.5em 2em;
+    text-decoration: none;
+    color: white;
+    text-align: right;
+}
+.left-col2{
+    text-align: center;
+    max-width: 35vw;
+    padding: 2em;
+    margin: 0em 3em;
+}
+.context
+{
+    font-weight: 400;
+    font-size: 1.2em;
+    margin-bottom: 2em;
+}
+/* dataset section */
+
+/* about us section */
+.about-us{
+    background : url(../images/bg-about-us.SVG);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 0em 0em 15em;
+}
+.right-col{
+    text-align: right;
+    display: inline;
+    padding-right: 3em;
+}
+figure {
+    padding: 1em;
+    margin: auto;
+    text-align: center;
+}  
+.team-image{
+    max-width:9vw;
+    margin: 1em;
+}
+figcaption {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 0.5em 1em;
+    text-align: center;
+}
+.team-ul{
+    list-style-type: none;
+    display: inline-flex;
+}
+.logo-ul{
+    position: absolute;
+    list-style-type: none;
+    display: inline-flex;
+    bottom: 0;
+}
+.left-col3{
+    align-items: bottom;
+}
+.logo-contact-image{
+    max-height:10vh;
+    padding: 0.5em;
+}
+/* about us section */
+
+/* footer */
+.footer {
+    background-size: cover;
+    background-color: var(--primary-green);
+    color: white;
+    text-align: left;
+    padding: 0.5em 0em 2.5em;
+}
+.head-footer{
+    padding-left: 3em;
+}
+.contact-ul{
+    list-style-type: none;
+    padding-right: 5em;
+    width: 50%;
+    font-size: 1.1em;
+}
+.contact-li{
+    padding-bottom: 0.5em;
+}
+.footer-image{
+    filter: white;
+}
+/* footer */
+
+/* dowload */
+.download{
+    min-height: 100vh;
+    background : url(../images/bg-download.SVG);
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    padding: 0em 5em 5em;
+
+}
+.download-sub-header{
+    background-color: var(--primary-green);
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+
+}
+.image-annote{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5em 0em;
+}
+.image-annote-content{
+    padding-right:10vw;
+    text-align:left;
+}
+.image-annote-ul{
+    list-style-type: none;
+    font-size: 1.1em;
+    padding-left: 0em;
+}
+.code-download{
+    text-align:left;
+}
+.code-content{
+    text-decoration: none;
+    list-style: none;
+    background-color:var(--background-white);
+    background: var(--navbar-white);
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 1em 3em;
+}
+.download-sub-header-image
+{
+    height: 2.5em;
+    padding: 0em 1em;
+}
+/* download */
+
+
+/* login and register*/
+.login-container{
+    background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(../images/ex3.JPG);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.form-container{
+    background: var(--navbar-white);
+    border-radius: 2em;
+    max-width: 35vw;
+    padding: 2em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:40vw;
+}
+.nav-logo2{
+    height: 6em;
+}
+.login-header{
+    font-weight: 600;
+    font-size: 2em;
+}
+.login-ul{
+    padding-left:0em;
+    list-style-type: none;
+    text-align: center;
+}
+.input-spacing{
+    padding-bottom: 1.5em;
+}
+.button-spacing{
+    padding: 0.8em 0em;
+}
+.user-button{
+    background: var(--primary-green);
+    border-radius: 25px;
+    padding: 0.4em 3em;
+    text-decoration: none;
+    color: white;
+}
+.user-button-text{
+    padding: 0.4em 3em;
+    text-decoration: none;
+    color: black;
+}
+i {
+    position: absolute;
+    padding: 10px 20px 0px;
+}
+.input{
+    font-family:inherit;
+    font-size: 1.1em;
+    padding:0.15em 2.5em;
+    border-radius:10em;
+}
+/* login */

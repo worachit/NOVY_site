@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+    {% load static %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <form method="post" class=form-container>
+            <ul class="login-ul">
+                <a href="{% url 'base:index' %}"><img id="logo" class="nav-logo2" src="{% static 'images/cassava-logos_black.png' %}" alt="Logo"></a>
+                <li>
+                    <p class="login-header">เข้าสู่ระบบ</p>
+                </li>
+                <li class="input-spacing">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" class="input" name="username" placeholder="ชื่อบัญชี">
+                </li>
+                <li class="input-spacing">
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" class="input" name="password" placeholder="รหัสผ่าน">
+                </li>
+                <li class="button-spacing"> 
+                        <a class="user-button" href="#">เข้าสู่ระบบ</a>
+                </li>
+                <li class="button-spacing">
+                    <a class="user-button-text" href="{% url 'user:signup' %}"> สมัครสมาชิค</a>
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+
+</html>

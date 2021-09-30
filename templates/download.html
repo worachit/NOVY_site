@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+    {% load static %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+    <div class="navbar-otherpage">
+        <div class="container">
+            <a href="{% url 'base:index' %}"><img id="logo" class="nav-logo" src="{% static 'images/cassava-logos_black.png' %}"
+                    alt="Logo"></a>
+            <nav>
+                <ul class="mainsite-nav">
+                    <li> <a class=nav-ul href="#hero"> หน้าหลัก</a></li>
+                    <li> <a class=nav-ul href="#dataset"> ฐานข้อมูล</a></li>
+                    <li> <a class=nav-ul href="#about-us"> เกี่ยวกับเรา</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul class="user-nav">
+                    <li> <a class=nav-ul href="{% url 'user:signup' %}"> ลงทะเบียน</a></li>
+                    <li class="login-button"> <a class=button-nav-ul href="{% url 'user:login' %}"> เข้าสู่ระบบ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+    <section class="download">
+        <h1>ดาวน์โหลด</h1>
+        <div class="download-sub-header">
+            <img src="{% static 'images/dowload-icon-zip.SVG' %}" class="download-sub-header-image">
+            <h3>ดาวน์โหลดแบบ zip</h2>
+        </div>
+        <div class="image-annote">
+            <div class="image-annote-content">
+                <h3>รูปภาพ</h3>
+                <ul class="image-annote-ul">
+                    <li><a href="#">Train images [83K/13GB]</a></li>
+                    <li><a href="#">Test images [83K/13GB]</a></li>
+                </ul>
+            </div>
+            <div class="image-annote-content">
+                <h3>Annotation</h3>
+                <ul class="image-annote-ul">
+                    <li><a href="#">Train/Val annotations [241MB]</a></li>
+                    <li><a href="#">Testing Image info [1MB]</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="download-sub-header">
+            <img src="{% static 'images/dowload-icon-api.SVG' %}" class="download-sub-header-image">
+            <h3> ดาวน์โหลดผ่าน API</h2>
+        </div>
+        <div class="code-download">
+            <p>ฐานข้อมูลรูปมันสัมปะหลังประกอบไปด้วยรูปภาพ และ Annotatoin สามารถดาวน์โหลดได้ผ่าน wget โดย Annotation
+                ในรูปแบบเดียวกับ COCO</p>
+            <p>รูปภาพ</p>
+            <ul class="code-content">
+                <li>wget http://images.cocodataset.org/zips/train2017.zip</li>
+                <li>wget http://images.cocodataset.org/zips/val2017.zip</li>
+                <li>wget http://images.cocodataset.org/zips/test2017.zip</li>
+            </ul>
+            <p>Annotatoin</p>
+
+            <ul class="code-content">
+                <li>wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip</li>
+            </ul>
+        </div>
+    </section>
+</body>
+
+</html>
