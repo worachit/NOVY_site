@@ -25,6 +25,8 @@
                 <ul class="user-nav">
                     <li> <a class=nav-ul href="{% url 'user:signup' %}"> ลงทะเบียน</a></li>
                     <li class="login-button"> <a class=button-nav-ul href="{% url 'user:login' %}"> เข้าสู่ระบบ</a></li>
+                    <li> {{request.user}} </li>
+                    <li> <a class=nav-ul href="{% url 'user:logout' %}"> ออกจากระบบ</a></li>
                 </ul>
             </nav>
         </div>
@@ -55,7 +57,11 @@
                         ตังค์เบลอกลาส รูบิคเอ๋ หลวงพี่เป็นไงรีเสิร์ชโอเลี้ยงเด้อ โบตั๋นแบตสแตนเลสปิโตรเคมีซาดิสต์
                         อีโรติกชาร์ปสเปกวัคค์นิรันดร์ เตี๊ยมดยุกสเต็ป ไฟลท์ซาฟารีฟิวเจอร์ ไมเกรนริกเตอร์ เลคเชอร</p>
                 </div>
-                <a class=button-download href="{% url 'dataset:download' %}"> ดาวน์โหลด</a>
+                {% if user.is_authenticated %}
+                    <a class=button-download href="{% url 'dataset:download' %}"> ดาวน์โหลด</a>
+                {% else %}
+                    <a class=button-download href="{% url 'user:login' %}"> ดาวน์โหลด</a>
+                {% endif %}
             </div>
 
             <div class="right-example-image">
@@ -140,7 +146,7 @@
             <ul class="contact-ul">
                 <li class="contact-li">สถาบันวิทยาการหุ่นยนต์ภาคสนาม (FIBO)</li>
                 <li class="contact-li">126 ถนนประชาอุทิศ แขวงบางมด เขตทุ่งครุ กรุงเทพฯ 10140</li>
-                <li class="contact-li"> <img src="{% static 'images/phone.SVG' %}" class="footer-image"> ทรศัพท์: 0 2470 9339</li>
+                <li class="contact-li"> <img src="{% static 'images/phone.SVG' %}" class="footer-image"> โทรศัพท์: 0 2470 9339</li>
                 <li class="contact-li">โทรสาร: 0 2427 9703</li>
                 <li class="contact-li"> <img src="{% static 'images/email.SVG' %}" class="footer-image"> อีเมล:
                     information@fibo.kmutt.ac.th</li>

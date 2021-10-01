@@ -77,12 +77,16 @@ WSGI_APPLICATION = 'NOVY_site.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = 'user.UserDB'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME' : 'NOVY_DB2',
+        'USER' : 'postgres',
+        'PASSWORD' : 'novy1234',
+        'HOST' : 'localhost',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -125,7 +129,8 @@ USE_TZ = True
 
 STATIC_URL =  '/static/'
 
-STATICSFILES_DIRS = [BASE_DIR / '_front-end']
+STATICFILES_DIRS = [BASE_DIR / '_front-end/assets']
+
 
 STATIC_ROOT = BASE_DIR / "static"
 

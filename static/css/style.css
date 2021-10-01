@@ -12,7 +12,9 @@ body{
     background: white;
     font-family: Prompt;
     color: #374248;
-
+}
+input, select, textarea, button{
+    font-family:inherit;
 }
 .container{
     display: flex;
@@ -369,6 +371,8 @@ figcaption {
     padding: 0.4em 3em;
     text-decoration: none;
     color: white;
+    font-family: Prompt;
+    font-size: 1em;
 }
 .user-button-text{
     padding: 0.4em 3em;

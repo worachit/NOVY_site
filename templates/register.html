@@ -9,7 +9,8 @@
 
 <body>
     <div class="login-container">
-        <form method="post" class=form-container>
+        <form method="POST" class=form-container>
+            {% csrf_token %}
             <ul class="login-ul">
                 <a href="{% url 'base:index' %}"><img id="logo" class="nav-logo2" src="{% static 'images/cassava-logos_black.png' %}" alt="Logo"></a>
                 <li>
@@ -17,35 +18,49 @@
                 </li>
                 <li class="input-spacing">
                     <i class="fa fa-address-card-o icon"></i>
-                    <input type="text" class="input" name="first_name" placeholder="ชื่อจริง">
+                    <!-- <input type="text" class="input" name="first_name" placeholder="ชื่อจริง"> -->
+                    {{form.first_name}}
                 </li>
                 <li class="input-spacing">
                     <i class="fa fa-address-card-o icon"></i>
-                    <input type="text" class="input" name="last_name" placeholder="นามสกุล">
+                    <!-- <input type="text" class="input" name="last_name" placeholder="นามสกุล"> -->
+                    {{form.last_name}}
                 </li>
                 <li class="input-spacing">
                     <i class="fa fa-user icon"></i>
-                    <input type="text" class="input" name="username" placeholder="ชื่อบัญชี">
+                    <!-- <input type="text" class="input" name="username" placeholder="ชื่อบัญชี"> -->
+                    {{form.username}}
                 </li>
                 <li class="input-spacing">
                     <i class="fa fa-envelope icon"></i>
-                    <input type="email" class="input" name="email" placeholder="อีเมล">
+                    <!-- <input type="email" class="input" name="email" placeholder="อีเมล"> -->
+                    {{form.email}}
                 </li>
                 <li class="input-spacing">
                     <i class="fa fa-lock icon"></i>
-                    <input type="password" class="input" name="password" placeholder="รหัสผ่าน">
+                    <!-- <input type="password" class="input" name="password" placeholder="รหัสผ่าน"> -->
+                    {{form.password1}}
                 </li>
                 <li class="input-spacing">
                     <i class="fa fa-lock icon"></i>
-                    <input type="password" class="input" name="confirm_password" placeholder="ยืนยันรหัสผ่าน">
+                    <!-- <input type="password" class="input" name="confirm_password" placeholder="ยืนยันรหัสผ่าน"> -->
+                    {{form.password2}}
                 </li>
+
+                <li>
+                    {{form.errors}}
+                </li>
+
                 <li class="button-spacing"> 
-                        <a class="user-button" href="#">สร้างบัญชี</a>
+                    <!-- <a class="user-button" href="#">สร้างบัญชี</a> -->
+                    <input class="user-button" type="submit" name="Create User" value="สร้างบัญชี">
                 </li>
                 <li class="button-spacing">
                     <a class="user-button-text" href="{% url 'user:login' %}">เข้าสู่ระบบ</a>
                 </li>
+                
             </ul>
+            
         </form>
     </div>
 </body>
