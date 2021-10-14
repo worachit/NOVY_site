@@ -1,0 +1,33 @@
+{% load static %}
+{% load custom_tags %}
+
+<div class="navbar-otherpage">
+    <div class="nav-container">
+        <a href="{% url 'base:index' %}"><img id="logo" class="nav-logo" src="{% static 'images/cassava-logos_black.png' %}"
+                alt="Logo"></a>
+        <nav>
+            <ul class="mainsite-nav">
+                <li> <a class=nav-ul href="{% anchor 'base:index' 'hero' %}"> หน้าหลัก</a></li>
+                <li> <a class=nav-ul href="{% anchor 'base:index' 'dataset' %}"> ฐานข้อมูล</a></li>
+                <li> <a class=nav-ul href="{% anchor 'base:index' 'about-us' %}"> เกี่ยวกับเรา</a></li>
+            </ul>
+        </nav>
+        <nav>
+            {% if user.is_authenticated %}
+            <ul class="user-nav">
+                <li class=user-ul>
+                    <div class="circle"> {{request.user|make_list|first}} </div>
+                    <p class=username-text> {{request.user}}</p>
+                </li>
+
+                <li class="login-button"> <a class=button-nav-ul href="{% url 'user:logout' %}"> ออกจากระบบ</a></li>
+            </ul>
+            {% else %}
+            <ul class="user-nav">
+                <li> <a class=nav-ul href="{% url 'user:signup' %}"> ลงทะเบียน</a></li>
+                <li class="login-button"> <a class=button-nav-ul href="{% url 'user:login' %}"> เข้าสู่ระบบ</a></li>
+            </ul>
+            {% endif %}
+        </nav>
+    </div>
+</div>

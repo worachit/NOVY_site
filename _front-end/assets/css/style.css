@@ -20,6 +20,11 @@ input, select, textarea, button{
     display: flex;
     place-content: space-between;
 }
+.nav-container{
+    display: flex;
+    place-content: space-between;
+    align-items: center;
+}
 h1{
     font-weight: 700;
     font-size: 2.5em;
@@ -52,7 +57,6 @@ h5{
 .navbar{
     position: fixed;
     background: var(--navbar-white);
-    /* background-size: cover; */
     padding-top: 0.5em;
     font-size: 1.1em;
     width: 100%;
@@ -60,7 +64,6 @@ h5{
 }
 .navbar-otherpage{
     background: var(--navbar-white);
-    /* background-size: cover; */
     padding-top: 0.5em;
     font-size: 1.1em;
     width: 100%;
@@ -91,14 +94,32 @@ h5{
     list-style-type: none;
     display: inline-flex;
     padding-right: 2em;
+    align-items: center;
 }
 .nav-ul{
     text-decoration: none;
     padding-right: 2em;
     color: #00361E
 }
+.user-ul{
+    text-decoration: none;
+    padding-right: 2em;
+    color: #00361E;
+    display: inline-flex;
+    align-items: center;
+}
 ul.mainsite-nav a:hover, ul.user-nav a:hover { 
     color: var(--primary-green); 
+}
+.circle {
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    border-radius: 100%;
+    color: white;
+    text-align: center;
+    background: var(--primary-green);
+    margin-right: 0.5em;
 }
 /* navbar css */
 
@@ -106,7 +127,8 @@ ul.mainsite-nav a:hover, ul.user-nav a:hover {
 /* hero section */
 .hero{
     min-height: 100vh;
-    background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(../images/index-image.PNG);
+    /* background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(../images/index-image.PNG); */
+    background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('https://storage.googleapis.com/novy-bucket/images/index-image.png');
     background-position: top;
     background-size: cover;
     position: relative;
@@ -133,7 +155,8 @@ ul.mainsite-nav a:hover, ul.user-nav a:hover {
 
 /* dataset section */
 .dataset{
-    background : url(../images/blob-dataset.SVG);
+    /* background : url(../images/blob-dataset.SVG); */
+    background : url("https://storage.googleapis.com/novy-bucket/images/blob-dataset.svg");
     padding: 5em 0em 20em;
     background-position: center;
     background-size: cover;
@@ -200,7 +223,8 @@ ul.mainsite-nav a:hover, ul.user-nav a:hover {
 
 /* about us section */
 .about-us{
-    background : url(../images/bg-about-us.SVG);
+    /* background : url(../images/bg-about-us.SVG); */
+    background : url("https://storage.googleapis.com/novy-bucket/images/about-us-bg.svg");
     background-position: center;
     background-size: cover;
     position: relative;
@@ -273,7 +297,8 @@ figcaption {
 /* dowload */
 .download{
     min-height: 100vh;
-    background : url(../images/bg-download.SVG);
+    /* background : url(../images/bg-download.SVG); */
+    background :  url("https://storage.googleapis.com/novy-bucket/images/bg-download.svg");
     background-position: top;
     background-size: cover;
     position: relative;
@@ -326,7 +351,8 @@ figcaption {
 
 /* login and register*/
 .login-container{
-    background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(../images/ex3.JPG);
+    /* background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('../images/ex3.JPG'); */
+    background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("https://storage.googleapis.com/novy-bucket/images/ex3.JPG");
     background-position: center;
     background-size: cover;
     position: relative;

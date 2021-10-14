@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="th">
     {% load static %}
+    {% load custom_tags %}
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Downloads | Cassava</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 
 <body>
-    <div class="navbar-otherpage">
+    <!-- <div class="navbar-otherpage">
         <div class="container">
             <a href="{% url 'base:index' %}"><img id="logo" class="nav-logo" src="{% static 'images/cassava-logos_black.png' %}"
                     alt="Logo"></a>
             <nav>
                 <ul class="mainsite-nav">
-                    <li> <a class=nav-ul href="#hero"> หน้าหลัก</a></li>
-                    <li> <a class=nav-ul href="#dataset"> ฐานข้อมูล</a></li>
-                    <li> <a class=nav-ul href="#about-us"> เกี่ยวกับเรา</a></li>
+                    <li> <a class=nav-ul href="{% anchor 'base:index' 'hero' %}"> หน้าหลัก</a></li>
+                    <li> <a class=nav-ul href="{% anchor 'base:index' 'dataset' %}"> ฐานข้อมูล</a></li>
+                    <li> <a class=nav-ul href="{% anchor 'base:index' 'about-us' %}"> เกี่ยวกับเรา</a></li>
                 </ul>
             </nav>
             <nav>
@@ -26,13 +27,15 @@
                 </ul>
             </nav>
         </div>
-    </div>
+    </div> -->
 
+    <!-- Navigation -->
+    {% include 'navbar/navbar-other.html' %}
 
     <section class="download">
         <h1>ดาวน์โหลด</h1>
         <div class="download-sub-header">
-            <img src="{% static 'images/dowload-icon-zip.SVG' %}" class="download-sub-header-image">
+            <img src="{% static 'images/dowload-icon-zip.svg' %}" class="download-sub-header-image">
             <h3>ดาวน์โหลดแบบ zip</h2>
         </div>
         <div class="image-annote">
@@ -52,7 +55,7 @@
             </div>
         </div>
         <div class="download-sub-header">
-            <img src="{% static 'images/dowload-icon-api.SVG' %}" class="download-sub-header-image">
+            <img src="{% static 'images/dowload-icon-api.svg' %}" class="download-sub-header-image">
             <h3> ดาวน์โหลดผ่าน API</h2>
         </div>
         <div class="code-download">
