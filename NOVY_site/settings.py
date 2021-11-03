@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from django.core.management.utils import get_random_secret_key
 from pathlib import Path
 import io
 import os
@@ -20,50 +21,16 @@ from google.cloud import secretmanager
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# [START gaestd_py_django_secret_config]
-env = environ.Env(DEBUG=(bool, True))
-env_file = BASE_DIR / ".env"
-
-if os.path.isfile(env_file):
-    # Use a local secret file, if provided
-
-    env.read_env(env_file)
-# [START_EXCLUDE]
-elif os.getenv("TRAMPOLINE_CI", None):
-    # Create local settings if running with CI, for unit testing
-
-    placeholder = (
-        f"SECRET_KEY=a\n"
-        f"DATABASE_URL=sqlite://{os.path.join(BASE_DIR, 'db.sqlite3')}"
-    )
-    env.read_env(io.StringIO(placeholder))
-# [END_EXCLUDE]
-elif os.environ.get("GOOGLE_CLOUD_PROJECT", None):
-    # Pull secrets from Secret Manager
-    project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
-
-    client = secretmanager.SecretManagerServiceClient()
-    settings_name = os.environ.get("SETTINGS_NAME", "novy-setting")
-    name = f"projects/{project_id}/secrets/{settings_name}/versions/latest"
-    payload = client.access_secret_version(name=name).payload.data.decode("UTF-8")
-
-    env.read_env(io.StringIO(payload))
-else:
-    raise Exception("No local .env or GOOGLE_CLOUD_PROJECT detected. No secrets found.")
-
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("DEBUG")
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-# SECURITY WARNING: App Engine's security features ensure that it is safe to
-# have ALLOWED_HOSTS = ['*'] when the app is deployed. If you deploy a Django
-# app not on App Engine, make sure to set an appropriate host here.
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
 # Application definition
@@ -115,30 +82,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'NOVY_site.wsgi.application'
 
-
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-AUTH_USER_MODEL = 'user.UserDB'
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
-
-DATABASES = {"default": env.db()}
-
-# If the flag as been set, configure to use proxy
-if os.getenv("USE_CLOUD_SQL_AUTH_PROXY", None):
-    DATABASES["default"]["HOST"] = "127.0.0.1"
-    DATABASES["default"]["PORT"] = 5431
-
-# [END gaestd_py_django_database_config]
-# [END db_setup]
-
-# Use a in-memory sqlite3 database when testing in CI systems
-# TODO(glasnt) CHECK IF THIS IS REQUIRED because we're setting a val above
-if os.getenv("TRAMPOLINE_CI", None):
+if DEVELOPMENT_MODE is True:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
         }
+    }
+elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+    if os.getenv("DATABASE_URL", None) is None:
+        raise Exception("DATABASE_URL environment variable not defined")
+    DATABASES = {
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
     }
 
 
@@ -178,18 +137,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-# STATIC_URL =  '/static/'
 
 STATICFILES_DIRS = [BASE_DIR / '_front-end/assets']
-
-# STATIC_ROOT = BASE_DIR / "static"
-
-GS_PROJECT_ID = env('GS_PROJECT_ID')
-GS_BUCKET_NAME = env("GS_BUCKET_NAME")
-STATIC_URL = "/static/"
-DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
-STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
-GS_DEFAULT_ACL = "publicRead"
+STATIC_URL =  '/static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # Default primary key field type

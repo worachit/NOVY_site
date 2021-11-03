@@ -10,17 +10,15 @@
 </head>
 
 <body>
-
     <!-- Navigation -->
     {% include 'navbar/navbar.html' %}
-
-
+    
     <section id=hero class="hero">
         <div class="container">
             <div class="left-col">
                 <h5>ใหญ่ที่สุดในประเทศไทย</h5>
                 <h2>ฐานข้อมูลภาพถ่ายโรคมันสำปะหลัง</h2>
-                <p class="subhead">ฐานข้อมูล Big Data ของภาพถ่านต้นมันสำปะหลังจากโดรน
+                <p class="subhead">ฐานข้อมูล Big Data ของภาพถ่ายต้นมันสำปะหลังจากโดรน
                     เพื่อการพัฒนาระบบการเรียนรู้ปัญญาประดิษฐ์</p>
             </div>
             <img src="{% static 'images/bottom-hero.svg' %}" id="bottom-hero">
@@ -34,10 +32,11 @@
                 <div class="left-align">
                     <h1>รายละเอียดฐานข้อมูล</h1>
                     <p class="context">
-                        ข้อมูลภาพถ่ายมุมสูงจากแปลงไรมันสัมปะหลัง 
-                        ข้อมูล label กำกับ format coco api
-                        โดยเหมาะกับการทำ object detection และ image classification
-                        โดยเหมาะกับการทำระบบการเรียนรู้ของเครื่องจักร (Machine learning) เพื่อจำแนกโรคต่างๆในมันสัมปะหลัง เช่น โรคใบด่าง 
+                        Cassava เป็นฐานข้อมูล Big Data ของภาพถ่ายแปลงต้นมันสำปะหลังมุมสูงจากโดรน
+                        ชุดข้อมูล Big Data ประกอบไปด้วยชุดรูปภาพมุมสูงจากโดรน และ Annotatoin บอกถึงตำแหน่ง 
+                        และโรคของต้นมันสำปะหลังกำกับในรูปแบบของ COCO API
+                        ฐานข้อมูลหมาะสำหรับการทำ Object Detection และ Image Classification
+                        เพื่อการทำระบบการเรียนรู้ของเครื่องจักร (Machine learning) เพื่อจำแนกโรคต่างๆในมันสัมปะหลัง เช่น โรคใบด่าง 
                         หรือเพื่อพัฒนาระบบการวางแผนเพื่อบินโดรนการเกษตรอัตโนมัติ </p>
                 </div>
                 {% if user.is_authenticated %}
@@ -79,19 +78,19 @@
                     <ul class="team-ul">
                         <li>
                             <figure>
-                                <img id="example" class="team-image" src="{% static 'images/team-image.png' %}" alt="per1">
+                                <img id="example" class="team-image" src="{% static 'images/ordpadee.png' %}" alt="per1">
                                 <figcaption>ผศ.ดร.อรพดี จูฉิม</figcaption>
                             </figure>
                         </li>
                         <li>
                             <figure>
-                                <img id="example" class="team-image" src="{% static 'images/team-image.png' %}" alt="per2">
+                                <img id="example" class="team-image" src="{% static 'images/krit.png' %}" alt="per2">
                                 <figcaption>นายกฤตธัช สาทรานนท์</figcaption>
                             </figure>
                         </li>
                         <li>
                             <figure>
-                                <img id="example" class="team-image" src="{% static 'images/team-image.png' %}" alt="per3">
+                                <img id="example" class="team-image" src="{% static 'images/nut.png' %}" alt="per3">
                                 <figcaption>นายณัฐพงษ์ ฉางแก้ว</figcaption>
                             </figure>
                         </li>
@@ -99,13 +98,13 @@
                     <ul class="team-ul">
                         <li>
                             <figure>
-                                <img id="example" class="team-image" src="{% static 'images/team-image.png' %}" alt="per1">
+                                <img id="example" class="team-image" src="{% static 'images/vera2.png' %}" alt="per1">
                                 <figcaption>นายวีระชาติ ค้ำคูณ</figcaption>
                             </figure>
                         </li>
                         <li>
                             <figure>
-                                <img id="example" class="team-image" src="{% static 'images/team-image.png' %}" alt="per2">
+                                <img id="example" class="team-image" src="{% static 'images/kwee.png' %}" alt="per2">
                                 <figcaption>นายกวีวุฒิ ชูจิตร</figcaption>
                             </figure>
                         </li>
