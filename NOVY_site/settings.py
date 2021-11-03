@@ -86,7 +86,9 @@ WSGI_APPLICATION = 'NOVY_site.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+
+AUTH_USER_MODEL = 'user.UserDB'
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "True") == "True"
 
 if DEVELOPMENT_MODE is True:
     DATABASES = {
@@ -143,7 +145,6 @@ USE_TZ = True
 STATICFILES_DIRS = [BASE_DIR / '_front-end/assets']
 STATIC_URL =  '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
