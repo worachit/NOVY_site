@@ -40,10 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'base',
     'dataset',
     'user',
-
 ]
 
 MIDDLEWARE = [
@@ -137,6 +137,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+AWS_ACCESS_KEY_ID = '4HHZPWUKUGGHG4TLQNCA'
+AWS_SECRET_ACCESS_KEY = 'ekZq5EapOivcqP9/8PtjV2uEzl3r708ecZtm/E7DvOg'
+AWS_STORAGE_BUCKET_NAME = 'novy-static'
+AWS_S3_ENDPOINT_URL = 'https://sgp1.digitaloceanspaces.com'
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'https://novy-static.sgp1.digitaloceanspaces.com'
+
+DEFAULT_FILE_STORAGE = "NOVY_site.backends.MediaRootS3Boto3Storage"
+STATICFILES_STORAGE = "NOVY_site.backends.StaticRootS3Boto3Storage"
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'mysite/static'),
+]
 
 STATICFILES_DIRS = [BASE_DIR / '_front-end/assets']
 STATIC_URL =  '/static/'
