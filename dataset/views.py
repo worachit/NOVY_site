@@ -6,9 +6,9 @@ def download(request):
         drop = request.POST['drone01_dropdown']
         filename = request.POST['filename']
         if drop == "data":
-            path = request.build_absolute_uri("/dataset/download/api/" + drop + "/" + filename)
+            path = request.build_absolute_uri("/dataset/download/api/drone-01" + drop + "/" + filename)
         else:
-            path = request.build_absolute_uri("/dataset/download/api/" + drop)
+            path = request.build_absolute_uri("/dataset/download/api/drone-01" + drop)
 
         return render(request, 'download.html', {"path": path})
     else:
