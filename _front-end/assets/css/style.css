@@ -128,7 +128,7 @@ ul.mainsite-nav a:hover, ul.user-nav a:hover {
 .hero{
     min-height: 100vh;
     /* background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(../images/index-image.PNG); */
-    background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('https://storage.googleapis.com/novy-bucket/images/index-image.png');
+    background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("https://novy-static.sgp1.digitaloceanspaces.com/static/images/index-image.png");
     background-position: top;
     background-size: cover;
     position: relative;
@@ -156,7 +156,7 @@ ul.mainsite-nav a:hover, ul.user-nav a:hover {
 /* dataset section */
 .dataset{
     /* background : url(../images/blob-dataset.SVG); */
-    background : url("https://storage.googleapis.com/novy-bucket/images/blob-dataset.svg");
+    background : url("https://novy-static.sgp1.digitaloceanspaces.com/static/images/blob-dataset.svg");
     padding: 5em 0em 20em;
     background-position: center;
     background-size: cover;
@@ -224,7 +224,7 @@ ul.mainsite-nav a:hover, ul.user-nav a:hover {
 /* about us section */
 .about-us{
     /* background : url(../images/bg-about-us.SVG); */
-    background : url("https://storage.googleapis.com/novy-bucket/images/about-us-bg.svg");
+    background : url("https://novy-static.sgp1.digitaloceanspaces.com/static/images/about-us-bg.svg");
     background-position: center;
     background-size: cover;
     position: relative;
@@ -298,7 +298,7 @@ figcaption {
 .download{
     min-height: 100vh;
     /* background : url(../images/bg-download.SVG); */
-    background :  url("https://storage.googleapis.com/novy-bucket/images/bg-download.svg");
+    background :  url("https://novy-static.sgp1.digitaloceanspaces.com/static/images/bg-download.svg");
     background-position: top;
     background-size: cover;
     position: relative;
@@ -352,7 +352,7 @@ figcaption {
 /* login and register*/
 .login-container{
     /* background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('../images/ex3.JPG'); */
-    background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("https://storage.googleapis.com/novy-bucket/images/ex3.JPG");
+    background : linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("https://novy-static.sgp1.digitaloceanspaces.com/static/images/ex3.JPG");
     background-position: center;
     background-size: cover;
     position: relative;
@@ -416,3 +416,7 @@ i {
     border-radius:10em;
 }
 /* login */
+
+.hide {
+    display: none;
+}

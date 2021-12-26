@@ -23,11 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+
+os.getenv("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
-
+# DEBUG=True
+print("DEBUG", DEBUG)
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
@@ -148,11 +150,6 @@ AWS_LOCATION = 'https://novy-static.sgp1.digitaloceanspaces.com'
 
 DEFAULT_FILE_STORAGE = "NOVY_site.backends.MediaRootS3Boto3Storage"
 STATICFILES_STORAGE = "NOVY_site.backends.StaticRootS3Boto3Storage"
-
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'mysite/static'),
-]
 
 STATICFILES_DIRS = [BASE_DIR / '_front-end/assets']
 STATIC_URL =  '/static/'
