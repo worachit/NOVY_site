@@ -7,31 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Downloads | Cassava</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="../_front-end/assets/css/style2.css" />
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}" />
 </head>
 
 <body>
-    <!-- <div class="navbar-otherpage">
-        <div class="container">
-            <a href="{% url 'base:index' %}"><img id="logo" class="nav-logo" src="{% static 'images/cassava-logos_black.png' %}"
-                    alt="Logo"></a>
-            <nav>
-                <ul class="mainsite-nav">
-                    <li> <a class=nav-ul href="{% anchor 'base:index' 'hero' %}"> หน้าหลัก</a></li>
-                    <li> <a class=nav-ul href="{% anchor 'base:index' 'dataset' %}"> ฐานข้อมูล</a></li>
-                    <li> <a class=nav-ul href="{% anchor 'base:index' 'about-us' %}"> เกี่ยวกับเรา</a></li>
-                </ul>
-            </nav>
-            <nav>
-                <ul class="user-nav">
-                    <li> <a class=nav-ul href="{% url 'user:signup' %}"> ลงทะเบียน</a></li>
-                    <li class="login-button"> <a class=button-nav-ul href="{% url 'user:login' %}"> เข้าสู่ระบบ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div> -->
-
-    <!-- Navigation -->
     {% include 'navbar/navbar-other.html' %}
 
     <section class="download">
@@ -40,24 +19,56 @@
             <img src="{% static 'images/dowload-icon-zip.svg' %}" class="download-sub-header-image">
             <h3>ดาวน์โหลดแบบ zip</h2>
         </div>
-        <div class="image-annote">
-            <div class="image-annote-content">
-                <h3>รูปภาพ</h3>
-                <ul class="image-annote-ul">
-                    <li><a
-                            href="https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/data-01/train/Drone-01.rar">Train
-                            images</a></li>
-                </ul>
+
+        <div class="content-zip">
+            <div class="image-zip">
+                <img id="example" class="ex-image" src="{% static 'images/ex2.JPG' %}" alt="ex2">
             </div>
-            <div class="image-annote-content">
-                <h3>Annotation</h3>
-                <ul class="image-annote-ul">
-                    <li><a
+            <div class="download-zip">
+                <h3> drone-01 </h3>
+                <ul class="content-zip-ul">
+                    <li class="content-zip-li">
+                        <a
+                            href="https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/data-01/train/Drone-01.rar">Train
+                            images</a>
+                    </li>
+                    <li class="content-zip-li">
+                        <a
+                            href="https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/data-01/train/Drone-01.rar">Sample
+                            images</a>
+                    </li>
+                    <li class="content-zip-li">
+                        <a
                             href="https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/data-01/train_label/train.json">annotations</a>
                     </li>
                 </ul>
             </div>
         </div>
+
+        <div class="content-zip">
+            <div class="image-zip">
+                <img id="example" class="ex-image" src="{% static 'images/ex3.JPG' %}" alt="ex2">
+            </div>
+            <div class="download-zip">
+                <h3> drone-02 </h3>
+                <ul class="content-zip-ul">
+                    <li class="content-zip-li">
+                        <a
+                            href="https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/data-01/train/Drone-01.rar">Train
+                            images</a>
+                    </li>
+                    <li class="content-zip-li">
+                        <a href="#">Sample
+                            images</a>
+                    </li>
+                    <li class="content-zip-li">
+                        <a href="#">annotations</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
         <div class="download-sub-header">
             <img src="{% static 'images/dowload-icon-api.svg' %}" class="download-sub-header-image">
             <h3> ดาวน์โหลดผ่าน API</h2>
@@ -65,38 +76,44 @@
         <div class="code-download">
             <p>ฐานข้อมูลรูปมันสัมปะหลังประกอบไปด้วยรูปภาพ และ Annotatoin สามารถดาวน์โหลดได้ผ่าน web API โดยใช้
                 annotation ในรูปแบบของ COCO
+            <p>URL สำหรับเรียกดูชื่อ dataset ทั้งหมดในระบบ</p>
+            <ul class="code-content">
+                <li>{{path1}}</li>
+            </ul>
             <p>สร้าง URL สำหรับเรียกใช้งาน</p>
             <ul class="code-content">
-                <li>{{path}}</li>
+                <li>{{path2}}</li>
             </ul>
-            <p> สถานะ: สำเร็จ</p>
 
-            <form action="/dataset/download" class="" method="post">
-                {% csrf_token %}
-                <ul class="mainsite-nav">
-                    <li class="nav-ul">
-                        <select name="drone01_dropdown">
-                            <option value="data/all" id="all">รูปภาพทั้งหมด (data/all)</option>
-                            <option value="sample" id="sample">ตัวอย่างชุดข้อมูล (sample)</option>
-                            <option value="name" id="name">รายชื่อรูปภาพ (name)</option>
-                            <option value="data" id="data">รูปภาพ (data)</option>
-                            <option value="label" id="label">label</option>
-                        </select>
-                    </li>
-                    <li class="nav-ul">
-                        <input type="text" class="input" name="filename">
-                    </li>
-                </ul>
-                <input type="submit" value="สร้าง URL">
-
+            <form action="/dataset/download" method="post">
+                <div class="api-form">
+                    {% csrf_token %}
+                        <ul class="mainsite-nav2">
+                            <li class="nav-ul">
+                                <select name="name_dropdown" class=api-drop>
+                                    <option value="drone-01" id="drone-01">drone-01</option>
+                                    <option value="drone-02" id="drone-02">drone-02</option>
+                                </select>
+                            </li>
+                            <li class="nav-ul">
+                                <select name="select_type" class=api-drop>
+                                    <option value="data/all" id="all">รูปภาพทั้งหมด (data/all)</option>
+                                    <option value="sample" id="sample">ตัวอย่างชุดข้อมูล (sample)</option>
+                                    <option value="name" id="name">รายชื่อรูปภาพ (name)</option>
+                                    <option value="data" id="data">รูปภาพ (data)</option>
+                                    <option value="label" id="label">label</option>
+                                </select>
+                            </li>
+                            <li class="nav-ul">
+                                <input type="text" class="api-input" name="filename"
+                                    placeholder="ชื่อไฟล์ เช่น DJI_001.jpg">
+                            </li>
+                        </ul>
+                    <input type="submit" class="button-submit" value="สร้าง URL">
+                </div>
             </form>
         </div>
     </section>
 </body>
 
 </html>
-<!-- <div class="download-list-div">
-    <ul class="download-ul">
-        <li></li>
-    </ul>
-</div> -->
