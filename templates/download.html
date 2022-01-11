@@ -20,7 +20,7 @@
             <h3>ดาวน์โหลดแบบ zip</h2>
         </div>
 
-        <div class="content-zip">
+        <!-- <div class="content-zip">
             <div class="image-zip">
                 <img id="example" class="ex-image" src="{% static 'images/ex2.JPG' %}" alt="ex2">
             </div>
@@ -39,7 +39,7 @@
                     </li>
                     <li class="content-zip-li">
                         <a
-                            href="https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/data-01/train_label/train.json">annotations</a>
+                            href="https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/data-01/train_label/train.json">Annotations</a>
                     </li>
                 </ul>
             </div>
@@ -66,8 +66,31 @@
                     </li>
                 </ul>
             </div>
+        </div> -->
+        {% for dataset in dataset_list%}
+        <div class="content-zip">
+            <div class="image-zip">
+                <img id="example" class="ex-image" src={{dataset.header_image}} alt="ex2">
+            </div>
+            <div class="download-zip">
+                <h3> {{dataset.name}} </h3>
+                <ul class="content-zip-ul">
+                    <li class="content-zip-li">
+                        <a
+                            href={{dataset.train_images}}>Train
+                            images</a>
+                    </li>
+                    <!-- <li class="content-zip-li">
+                        <a href="{{dataset.sample}}">Sample
+                            images</a>
+                    </li> -->
+                    <li class="content-zip-li">
+                        <a href="{{dataset.annotations}}">annotations</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-
+        {% endfor %}
 
         <div class="download-sub-header">
             <img src="{% static 'images/dowload-icon-api.svg' %}" class="download-sub-header-image">
@@ -91,14 +114,15 @@
                         <ul class="mainsite-nav2">
                             <li class="nav-ul">
                                 <select name="name_dropdown" class=api-drop>
-                                    <option value="drone-01" id="drone-01">drone-01</option>
-                                    <option value="drone-02" id="drone-02">drone-02</option>
+                                    {% for dataset in dataset_list%}
+                                        <option value={{dataset.name}} id={{dataset.name}}>{{dataset.name}}</option>
+                                    {% endfor %}
                                 </select>
                             </li>
                             <li class="nav-ul">
                                 <select name="select_type" class=api-drop>
                                     <option value="data/all" id="all">รูปภาพทั้งหมด (data/all)</option>
-                                    <option value="sample" id="sample">ตัวอย่างชุดข้อมูล (sample)</option>
+                                    <!-- <option value="sample" id="sample">ตัวอย่างชุดข้อมูล (sample)</option> -->
                                     <option value="name" id="name">รายชื่อรูปภาพ (name)</option>
                                     <option value="data" id="data">รูปภาพ (data)</option>
                                     <option value="label" id="label">label</option>
@@ -106,7 +130,7 @@
                             </li>
                             <li class="nav-ul">
                                 <input type="text" class="api-input" name="filename"
-                                    placeholder="ชื่อไฟล์ เช่น DJI_001.jpg">
+                                    placeholder="ชื่อไฟล์ เช่น DJI_001.JPG">
                             </li>
                         </ul>
                     <input type="submit" class="button-submit" value="สร้าง URL">
