@@ -8,27 +8,12 @@ def download(request):
             {"name" : "drone-01",
             "header_image" : "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train/DJI_0513.JPG",
             "train_images" : "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train/drone-01_dataset.rar",
-            # "sample": "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train/Drone-01.rar",
             "annotations": "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train_label/drone-01_train.json"},
             
             {"name" : "Marvic-15m",
             "header_image" : "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/Marvic-15m/train/DJI_0413.JPG",
             "train_images" : "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/Marvic-15m/train/Marvic-15m_dataset.rar",
-            # "sample": "#",
             "annotations": "#"},
-            
-            # {"name" : "drone-03",
-            # "header_image" : 'images/ex2.JPG',
-            # "train_images" : "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train/Drone-01.rar",
-            # # "sample": "#",
-            # "annotations": "#"},
-            
-            # {"name" : "drone-04",
-            # "header_image" : 'images/ex2.JPG',
-            # "train_images" : "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train/Drone-01.rar",
-            # # "sample": "#",
-            # "annotations": "#"
-            # }
             ]
 
 
@@ -41,7 +26,7 @@ def download(request):
             drop_type = "data/all"
         filename = request.POST['filename']
         
-        if drop_type == "data":
+        if drop_type == "data" or drop_type == "datac":
             path2 = request.build_absolute_uri("/dataset/download/api/" + drop_name + "/" + drop_type + "/" + filename)
         else:
             path2 = request.build_absolute_uri("/dataset/download/api/" + drop_name + "/" + drop_type)
@@ -68,6 +53,11 @@ def drone01_image(request,name):
     url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train/" + name
     return redirect(url)
 
+def drone01_image_compress(request,name):
+    print(name)
+    url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train_compress/" + name
+    return redirect(url)
+
 def drone01_name(request):
     url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train/drone-01_filenames.json"
     return redirect(url)
@@ -84,6 +74,11 @@ def Marvic_zip(request):
 def Marvic_image(request,name):
     print(name)
     url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/Marvic-15m/train/" + name
+    return redirect(url)
+
+def Marvic_image_compress(request,name):
+    print(name)
+    url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/Marvic-15m/train_compress/" + name
     return redirect(url)
 
 def Marvic_name(request):
