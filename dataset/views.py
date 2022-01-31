@@ -58,8 +58,8 @@ def drone01_image_compress(request,name):
     url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train_compress/" + name
     return redirect(url)
 
-def drone01_name(request):
-    url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train/drone-01_filenames.json"
+def drone01_info(request):
+    url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train/drone-01_info.json"
     return redirect(url)
 
 def drone01_label(request):
@@ -81,8 +81,8 @@ def Marvic_image_compress(request,name):
     url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/Marvic-15m/train_compress/" + name
     return redirect(url)
 
-def Marvic_name(request):
-    url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/Marvic-15m/train/Marvic-15m_filenames.json"
+def Marvic_info(request):
+    url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/Marvic-15m/train/Marvic-15m_info.json"
     return redirect(url)
 
 def Marvic_label(request):
