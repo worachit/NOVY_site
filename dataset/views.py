@@ -26,7 +26,7 @@ def download(request):
             drop_type = "data/all"
         filename = request.POST['filename']
         
-        if drop_type == "data" or drop_type == "datac":
+        if drop_type == "data" or drop_type == "datac" or drop_type == "thumbnail":
             path2 = request.build_absolute_uri("/dataset/download/api/" + drop_name + "/" + drop_type + "/" + filename)
         else:
             path2 = request.build_absolute_uri("/dataset/download/api/" + drop_name + "/" + drop_type)
@@ -44,18 +44,16 @@ def drone01_zip(request):
     url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train/drone-01_dataset.rar"
     return redirect(url)
 
-# def drone01_sample(request):
-#     url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train/Drone-01_sample.rar"
-#     return redirect(url)
-
 def drone01_image(request,name):
-    print(name)
     url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train/" + name
     return redirect(url)
 
 def drone01_image_compress(request,name):
-    print(name)
     url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train_compress/" + name
+    return redirect(url)
+
+def drone01_image_thumbnail(request,name):
+    url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/drone-01/train_thumbnail/" + name
     return redirect(url)
 
 def drone01_info(request):
@@ -72,13 +70,15 @@ def Marvic_zip(request):
     return redirect(url)
 
 def Marvic_image(request,name):
-    print(name)
     url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/Marvic-15m/train/" + name
     return redirect(url)
 
 def Marvic_image_compress(request,name):
-    print(name)
     url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/Marvic-15m/train_compress/" + name
+    return redirect(url)
+
+def Marvic_image_thumbnail(request,name):
+    url = "https://novy-static.sgp1.digitaloceanspaces.com/dataset/dataset/Marvic-15m/train_thumbnail/" + name
     return redirect(url)
 
 def Marvic_info(request):
